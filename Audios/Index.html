@@ -1,0 +1,534 @@
+
+
+Nome da página: Inglês com o Prof. Paulo Malheiro
+Minha foto:
+Meu perfil:
+
+Seja bem-vindo!
+Instruções:
+
+1) Leia a frase em Inglês;
+2) Ouça o áudio correspondente;
+3) Tente traduzir a frase automaticamente, ou se necessário, utilize um tradutor;
+4) Confira a sua tradução;
+5) Confira a tradução correta.
+
+Faça todas as atividades de cada unidade. A duração do programa depende do seu desempenho e dedicação ao conteúdo.
+Para praticar: Agende sua aula on line e interaja com o professor/ o professor e a turma.
+Bons estudos!
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Minha Página</title>
+</head>
+<body>
+  <h1>Hello, world!</h1>
+  <p>Esta é uma página HTML simples.</p>
+</body>
+</html>
+
+
+<header style="text-align: center; margin-bottom: 30px;">
+  <h1>Inglês com o Prof. Paulo Malheiro</h1>
+
+  <!-- Substitua a URL da imagem pelo link da sua foto -->
+  <img src="https://via.placeholder.com/150" alt="Foto do Professor Paulo Malheiro"
+       style="width:150px; height:150px; border-radius: 50%; margin-top: 10px;"><br>
+
+  <p style="font-size: 1.1em; margin-top: 10px;"><strong>Seja bem-vindo!</strong></p>
+
+  <div style="text-align: left; max-width: 600px; margin: 20px auto; background-color: #f9f9f9; padding: 20px; border-radius: 12px; border: 1px solid #ccc;">
+    <h3>Instruções:</h3>
+    <ol>
+      <li>Leia a frase em Inglês;</li>
+      <li>Ouça o áudio correspondente;</li>
+      <li>Tente traduzir a frase automaticamente, ou se necessário, utilize um tradutor;</li>
+      <li>Confira a sua tradução;</li>
+      <li>Confira a tradução correta.</li>
+    </ol>
+
+    <p>Faça todas as atividades de cada unidade. A duração do programa depende do seu desempenho e dedicação ao conteúdo.</p>
+
+    <h4>Para praticar:</h4>
+    <p>Agende sua aula online e interaja com o professor ou com a turma.</p>
+
+    <p style="text-align: center; font-weight: bold; font-size: 1.1em;">Bons estudos!</p>
+  </div>
+</header>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Frases em Inglês - Prática</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .phrase-block {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    .audio-icon {
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .translate-input {
+      width: 100%;
+      margin-top: 10px;
+      padding: 5px;
+    }
+
+    .translation {
+      display: none;
+      margin-top: 10px;
+      color: green;
+      font-weight: bold;
+    }
+
+    button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Pratique frases em inglês</h2>
+
+  <div class="phrase-block">
+    <p>
+      <strong>Frase:</strong> I used to smoke
+      <span class="audio-icon" onclick="playAudio('audio1')">🔊</span>
+      <audio id="audio1" src="i_used_to_smoke.mp3"></audio>
+    </p>
+
+    <input type="text" class="translate-input" placeholder="Traduza a frase aqui...">
+
+    <button onclick="showTranslation('translation1')">Mostrar tradução</button>
+    <p class="translation" id="translation1">Eu costumava fumar</p>
+  </div>
+
+  <!-- Você pode duplicar o bloco acima para novas frases -->
+  
+  <script>
+    function playAudio(id) {
+      document.getElementById(id).play();
+    }
+
+    function showTranslation(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Área Restrita - Inglês</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    #authArea {
+      max-width: 400px;
+      margin: 100px auto;
+      text-align: center;
+    }
+    #protectedContent {
+      display: none;
+    }
+    input {
+      padding: 8px;
+      margin: 5px;
+      width: 80%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 8px 16px;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Área de autenticação -->
+  <div id="authArea">
+    <h2>Acesso restrito</h2>
+    <p>Digite o código e a senha para continuar:</p>
+    <input type="text" id="code" placeholder="Código"><br>
+    <input type="password" id="password" placeholder="Senha"><br>
+    <button onclick="authenticate()">Entrar</button>
+    <p id="authMessage" style="color:red;"></p>
+  </div>
+
+  <!-- Conteúdo protegido -->
+  <div id="protectedContent">
+    <h2>Bem-vindo ao conteúdo!</h2>
+    <p>Aqui estará a sua página com as frases e áudios.</p>
+    <!-- TODO: Inserir aqui o conteúdo interativo -->
+  </div>
+
+  <script>
+    const CORRECT_CODE = "cursoingles";
+    const CORRECT_PASSWORD = "12345";
+
+    function authenticate() {
+      const code = document.getElementById('code').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const message = document.getElementById('authMessage');
+
+      if (code === CORRECT_CODE && password === CORRECT_PASSWORD) {
+        document.getElementById('authArea').style.display = 'none';
+        document.getElementById('protectedContent').style.display = 'block';
+      } else {
+        message.textContent = "Código ou senha incorretos.";
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Leia e pratique</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f7f7f7;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .frase {
+      background: white;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .ingles {
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 5px;
+    }
+    .traducao {
+      color: #555;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Frases com Áudio</h1>
+
+  <div class="frase">
+    <div class="ingles">Hi. I'm Ruben. Hello. I'm Harumi</div>
+    <div class="traducao">Oi. Eu sou Ruben. Olá. Eu sou Harumi</div>
+    <audio controls>
+      <source src="1.1.mp3" type="audio/mpeg">
+      Seu navegador não suporta o áudio.
+    </audio>
+  </div>
+
+  <div class="frase">
+    <div class="ingles">I'm learning English.</div>
+    <div class="traducao">Estou aprendendo inglês.</div>
+    <audio controls>
+      <source src="audios/im_learning_english.mp3" type="audio/mpeg">
+      Seu navegador não suporta o áudio.
+    </audio>
+  </div>
+
+  <div class="frase">
+    <div class="ingles">Nice to meet you!</div>
+    <div class="traducao">Prazer em conhecê-lo!</div>
+    <audio controls>
+      <source src="audios/nice_to_meet_you.mp3" type="audio/mpeg">
+      Seu navegador não suporta o áudio.
+    </audio>
+  </div>
+
+</body>
+</html>
+
+
+<div class="phrase-block">
+  <p>
+    <strong>Frase:</strong> She used to live here
+    <span class="audio-icon" onclick="playAudio('audio2')">🔊</span>
+    <audio id="audio2" src="she_used_to_live_here.mp3"></audio>
+  </p>
+
+  <input type="text" class="translate-input" placeholder="Traduza a frase aqui...">
+  <button onclick="showTranslation('translation2')">Mostrar tradução</button>
+  <p class="translation" id="translation2">Ela costumava morar aqui</p>
+</div>
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Prática de Tradução em Inglês</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .phrase-block {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 15px 20px;
+      margin-bottom: 25px;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .audio-icon {
+      cursor: pointer;
+      font-size: 20px;
+      margin-left: 10px;
+    }
+
+    .translate-input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .buttons {
+      margin-top: 10px;
+    }
+
+    button {
+      margin-right: 10px;
+      padding: 8px 12px;
+      font-size: 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background-color: #007BFF;
+      color: white;
+    }
+
+    .translation {
+      margin-top: 10px;
+      display: none;
+      color: green;
+      font-weight: bold;
+    }
+
+    .feedback {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .correct {
+      color: green;
+    }
+
+    .incorrect {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Pratique sua tradução!</h2>
+
+  <div class="phrase-block">
+    <p>
+      <strong>Frase:</strong> I used to smoke
+      <span class="audio-icon" onclick="playAudio('audio1')">🔊</span>
+      <audio id="audio1" src="i_used_to_smoke.mp3"></audio>
+    </p>
+
+    <input type="text" class="translate-input" id="input1" placeholder="Digite sua tradução...">
+    
+    <div class="buttons">
+      <button onclick="checkAnswer('input1', 'feedback1', 'Eu costumava fumar')">Verificar</button>
+      <button onclick="showTranslation('translation1')">Mostrar tradução</button>
+    </div>
+
+    <div class="feedback" id="feedback1"></div>
+    <p class="translation" id="translation1">✅ Eu costumava fumar</p>
+  </div>
+
+  <!-- Copie este bloco para adicionar mais frases -->
+  <!-- Lembre-se de trocar os IDs (input2, feedback2, audio2, etc.) -->
+
+  <script>
+    function playAudio(id) {
+      document.getElementById(id).play();
+    }
+
+    function showTranslation(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function checkAnswer(inputId, feedbackId, correctAnswer) {
+      const userInput = document.getElementById(inputId).value.trim().toLowerCase();
+      const correct = correctAnswer.toLowerCase();
+
+      const feedback = document.getElementById(feedbackId);
+
+      if (userInput === correct) {
+        feedback.textContent = "✅ Correto!";
+        feedback.className = "feedback correct";
+      } else {
+        feedback.textContent = "❌ Tente novamente.";
+        feedback.className = "feedback incorrect";
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Área Restrita - Inglês</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    #authArea {
+      max-width: 400px;
+      margin: 100px auto;
+      text-align: center;
+    }
+    #protectedContent {
+      display: none;
+    }
+    input {
+      padding: 8px;
+      margin: 5px;
+      width: 80%;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 8px 16px;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Área de autenticação -->
+  <div id="authArea">
+    <h2>Acesso restrito</h2>
+    <p>Digite o código e a senha para continuar:</p>
+    <input type="text" id="code" placeholder="Código"><br>
+    <input type="password" id="password" placeholder="Senha"><br>
+    <button onclick="authenticate()">Entrar</button>
+    <p id="authMessage" style="color:red;"></p>
+  </div>
+
+  <!-- Conteúdo protegido -->
+  <div id="protectedContent">
+    <h2>Bem-vindo ao conteúdo!</h2>
+    <p>Aqui estará a sua página com as frases e áudios.</p>
+    <!-- TODO: Inserir aqui o conteúdo interativo -->
+  </div>
+
+  <script>
+    const CORRECT_CODE = "cursoingles";
+    const CORRECT_PASSWORD = "12345";
+
+    function authenticate() {
+      const code = document.getElementById('code').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const message = document.getElementById('authMessage');
+
+      if (code === CORRECT_CODE && password === CORRECT_PASSWORD) {
+        document.getElementById('authArea').style.display = 'none';
+        document.getElementById('protectedContent').style.display = 'block';
+      } else {
+        message.textContent = "Código ou senha incorretos.";
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+<h2>Lição 1: Used to</h2>
+<div class="phrase-block">...</div>
+<div class="phrase-block">...</div>
+
+<h2>Lição 2: There is / There are</h2>
+<div class="phrase-block">...</div>
+
+<!-- até... -->
+
+<h2>Lição 67: Phrasal Verbs Avançados</h2>
+<div class="phrase-block">...</div>
+
+
+
+
+
+
+
+
+
+
+
